@@ -1,8 +1,8 @@
 ---
 inProgress: false
-title: Project title
-description: Project description
-img_alt: project image alt text
-link: https://github.com/veranikabarel?tab=repositories
-tags: ['React', 'CSS', 'Typescript']
+title: IEEE Computer Society
+description: Página web desarrollada con WordPress
+img_alt: imagen del proyecto de IEEE CS
+link: https://edu.ieee.org/pe-untels/
+tags: ['WordPress', 'CSS', 'JavaScript']
 ---

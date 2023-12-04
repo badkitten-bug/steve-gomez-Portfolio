@@ -1,8 +1,8 @@
 ---
 inProgress: false
-title: Project title
-description: Project description
-img_alt: project image alt text
-link: https://github.com/veranikabarel?tab=repositories
-tags: ['React', 'CSS', 'Typescript']
+title: Condominios Perú
+description: Página web desarrollada con WordPress
+img_alt: imagen del proyecto de condominios Perú
+link: https://www.condominiosperu.com/
+tags: ['WordPress', 'CSS', 'JavaScript']
 ---
