@@ -7,7 +7,7 @@ interface Props {
 	[x: string]: any;
 }
 
-const { size = 'md', style = 'primary', block, class: className, ...rest } = Astro.props;
+const { size = 'md', style = 'primary', block, class: className, href, ...rest } = Astro.props;
 
 const sizes = {
 	sm: 'px-4 py-1.5',
@@ -20,14 +20,33 @@ const styles = {
 };
 ---
 
-<button
-	{...rest}
-	class:list={[
-		'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-green',
-		block && 'w-full',
-		sizes[size],
-		styles[style],
-		className,
-	]}
-	><slot />
-</button>
+{href ? (
+	// Si se pasa el href, renderizamos un enlace <a>
+	<a
+		{...rest}
+		href={href}
+		class:list={[
+			'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-green',
+			block && 'w-full',
+			sizes[size],
+			styles[style],
+			className,
+		]}
+	>
+		<slot />
+	</a>
+) : (
+	// Si no hay href, renderizamos un botón
+	<button
+		{...rest}
+		class:list={[
+			'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-green',
+			block && 'w-full',
+			sizes[size],
+			styles[style],
+			className,
+		]}
+	>
+		<slot />
+	</button>
+)}

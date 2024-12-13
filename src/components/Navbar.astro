@@ -5,15 +5,15 @@ import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
 
 const menuitems = [
 	{
-		title: 'Acerca de nosotros',
+		title: 'About me',
 		path: '#about',
 	},
 	{
-		title: 'Proyectos',
+		title: 'Projects',
 		path: '#projects',
 	},
 	{
-		title: 'Contacto',
+		title: 'Contact',
 		path: '#contact',
 	},
 ];
@@ -21,31 +21,39 @@ const menuitems = [
 
 <header data-testId="header" class="my-5 flex flex-col items-center justify-between lg:flex-row">
 	<Astronav>
-		<div class="flex w-full items-center justify-between lg:w-auto">
-			<Button size={'sm'} name="Download CV">Descargar CV</Button>
-			<div class="block lg:hidden">
-				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
-			</div>
+	  <div class="flex w-full items-center justify-between lg:w-auto">
+		<Button
+		  size={'sm'}
+		  name="Download CV"
+		  href="https://docs.google.com/document/d/1qAmWH122Xncn0KWz-5NeAozwIF3fm5GU/edit?usp=sharing&ouid=102467692045887079389&rtpof=true&sd=true"
+		  target="_blank"
+		  rel="noopener noreferrer"
+		>
+		  Download CV
+		</Button>
+		<div class="block lg:hidden">
+		  <MenuIcon class="h-4 w-4 text-black dark:text-white" />
 		</div>
-		<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
-			<ul class="flex flex-col lg:flex-row lg:gap-3">
-				{
-					menuitems.map((item) => (
-						<>
-							<li>
-								<a
-									aria-label="navigation link"
-									href={item.path}
-									class="flex py-2 text-black hover:text-green dark:text-white dark:hover:text-green lg:px-3"
-								>
-									{item.title}
-								</a>
-							</li>
-						</>
-					))
-				}
-				<li><ToggleTheme /></li>
-			</ul>
-		</MenuItems>
+	  </div>
+	  <MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
+		<ul class="flex flex-col lg:flex-row lg:gap-3">
+		  {
+			menuitems.map((item) => (
+			  <>
+				<li>
+				  <a
+					aria-label="navigation link"
+					href={item.path}
+					class="flex py-2 text-black hover:text-green dark:text-white dark:hover:text-green lg:px-3"
+				  >
+					{item.title}
+				  </a>
+				</li>
+			  </>
+			))
+		  }
+		  <li><ToggleTheme /></li>
+		</ul>
+	  </MenuItems>
 	</Astronav>
-</header>
+  </header>
