@@ -10,11 +10,11 @@ const projects = await getCollection('projects', ({ data }) => {
 <section
 	data-testid="projects"
 	id="projects"
-	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+	class="mt-8 mb-10 flex flex-col items-center justify-center"
 >
 	<h2 class="font-monospace text-2xl text-green lg:text-4xl">Projects</h2>
 	<span class="mb-10 h-1 w-10 bg-green"></span>
-	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+	<div class="grid w-full max-w-7xl gap-8 mb-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 		{
 			projects.map((project) => (
 				<Card
