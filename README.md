@@ -1,62 +1,98 @@
-## Project Structure
+# 🚀 Portfolio Personal - Steve
 
-Inside of your Astro project, you'll see the following folders and files:
+Portfolio personal desarrollado con **Astro 5.11.0** y **Tailwind CSS**, mostrando mi experiencia de **4 años** como desarrollador full-stack.
+
+## 🛠️ Stack Tecnológico
+
+### Backend
+- **NestJS** - APIs RESTful & GraphQL
+- **Go** - Microservicios de alto rendimiento
+- **Node.js** - Runtime JavaScript
+
+### Frontend
+- **Astro 5** - Sitios web estáticos
+- **JavaScript/TypeScript** - Desarrollo full-stack
+- **React** - Interfaces de usuario
+
+### DevOps & Herramientas
+- **Docker** - Contenedores
+- **Git** - Control de versiones
+- **CI/CD** - Integración continua
+
+### Bases de Datos
+- **PostgreSQL** - Base de datos relacional
+- **MongoDB** - Base de datos NoSQL
+- **Redis** - Cache y sesiones
+
+## 🚀 Características
+
+- ✅ **Astro 5.11.0** - Framework más reciente
+- ✅ **Tailwind CSS 3.4.0** - Estilos modernos
+- ✅ **TypeScript** - Tipado estático
+- ✅ **Responsive Design** - Adaptable a todos los dispositivos
+- ✅ **Dark Mode** - Soporte para tema oscuro
+- ✅ **SEO Optimizado** - Mejor posicionamiento
+- ✅ **Performance** - Carga rápida y eficiente
+
+## 📦 Instalación
+
+```bash
+# Clonar el repositorio
+git clone <tu-repositorio>
+
+# Instalar dependencias
+pnpm install
+
+# Ejecutar en modo desarrollo
+pnpm run dev
+```
+
+## 🧪 Testing
+
+```bash
+# Ejecutar tests con Playwright
+pnpm test
+```
+
+## 🏗️ Build
+
+```bash
+# Construir para producción
+pnpm run build
+
+# Preview de la build
+pnpm run preview
+```
+
+## 📁 Estructura del Proyecto
 
 ```
-/
-├── public/
-│   └── favicon.ico
-|   ├── hero.png
-|   └── ...
+astro-portfolio/
 ├── src/
-|   ├── assets/
-|   |   ├── images/
-│   │   |   ├── hero.png
-|   |   |   └── ...
-│   ├── components/
-│   │   ├── ui/
-│   │   |   ├── BackToTop.astro
-|   |   |   └── ...
-│   │   ├── About.astro
-│   │   ├── Contact.astro
-|   |   └── ...
-│   ├── content/
-│   │   ├── projects/
-│   │   │   ├── project-1.md
-│   │   │   ├── project-1.md
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── Layout.astro
-│   ├── pages/
-│   │   ├── index.astro
-│   ├── tests/
-│   │   ├── index.spec.ts
-├── package.json
-├── astro.config.mjs
-└── ...
+│   ├── components/     # Componentes reutilizables
+│   ├── layouts/        # Layouts de página
+│   ├── pages/          # Páginas de la aplicación
+│   ├── assets/         # Imágenes y recursos
+│   └── content/        # Contenido en Markdown
+├── public/             # Archivos estáticos
+└── tests/              # Tests con Playwright
 ```
 
-Astro looks for `.astro`, `.md` or `.mdx` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎨 Personalización
 
-`src/components/` is where we put any Astro components and similarly `src/layouts/` for layouts.
+El proyecto está configurado con:
+- **Colores personalizados** en `tailwind.config.cjs`
+- **Tipografías** Inter e Inconsolata
+- **Componentes modulares** para fácil mantenimiento
 
-Images can be placed in `src/images/`.
+## 📈 Próximas Mejoras
 
-Blog and documentation content are created as collections of Markdown or MDX files in `src/content`.
+- [ ] Blog técnico integrado
+- [ ] Sección de experiencia laboral
+- [ ] Certificaciones
+- [ ] Proyectos con demos en vivo
+- [ ] Integración con CMS headless
 
-Any static assets, eg. images, can be placed in the `public/` directory.
+---
 
-## Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command             | Action                                             |
-| :------------------ | :------------------------------------------------- |
-| `pnpm`              | Installs dependencies                              |
-| `pnpm dev`          | Starts local dev server at `localhost:3000`        |
-| `pnpm build`        | Build your production site to `./dist/`            |
-| `pnpm preview`      | Preview your build locally, before deploying       |
-| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `pnpm astro --help` | Get help using the Astro CLI                       |
-| `pnpm test:e2e`     | Run Playwright tests                               |
+Desarrollado con ❤️ usando **Astro 5** y **Tailwind CSS**
