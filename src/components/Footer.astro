@@ -1,7 +1,6 @@
 ---
 import { getI18n } from '@content/i18n';
-const url = new URL(Astro.request.url);
-const lang = url.searchParams.get('lang') || 'es';
+const lang = Astro.url.pathname.split('/')[1] || 'es';
 const { t } = getI18n(lang);
 const year = new Date().getFullYear();
 ---
