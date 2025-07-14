@@ -1,20 +1,27 @@
 ---
 import Button from '@components/ui/Button.astro';
 import ToggleTheme from '@components/ui/ToggleTheme.astro';
+import LanguageToggle from '@components/ui/LanguageToggle.jsx';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
+import { getI18n } from '@content/i18n';
+
+const { lang = 'es' } = Astro.props;
+const { t } = getI18n(lang);
+
+const prefix = `/${lang}`;
 
 const menuitems = [
 	{
-		title: 'About me',
-		path: '#about',
+		title: t('navbar.about'),
+		path: `${prefix}/#about`,
 	},
 	{
-		title: 'Projects',
-		path: '#projects',
+		title: t('navbar.projects'),
+		path: `${prefix}/#projects`,
 	},
 	{
-		title: 'Contact',
-		path: '#contact',
+		title: t('navbar.contact'),
+		path: `${prefix}/#contact`,
 	},
 ];
 ---
@@ -53,6 +60,9 @@ const menuitems = [
 			))
 		  }
 		  <li><ToggleTheme /></li>
+		  <li>
+			<LanguageToggle client:only="react" />
+		  </li>
 		</ul>
 	  </MenuItems>
 	</Astronav>

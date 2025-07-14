@@ -1,0 +1,21 @@
+---
+import AboutAndStack from '@components/AboutAndStack.astro';
+import Contact from '@components/Contact.astro';
+import Hero from '@components/Hero.astro';
+import Projects from '@components/Projects.astro';
+import BackToTop from '@components/ui/BackToTop.astro';
+import CardLinkedin from '@components/ui/CardLinkedin.astro';
+import Layout from '@layouts/Layout.astro';
+
+---
+
+<Layout>
+	<main>
+		<Hero lang="en" />
+		<AboutAndStack lang="en" />
+		<CardLinkedin />
+		<Projects lang="en" />
+		<Contact />
+		<BackToTop />
+	</main>
+</Layout>

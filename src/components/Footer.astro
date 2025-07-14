@@ -1,12 +1,21 @@
+---
+import { getI18n } from '@content/i18n';
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') || 'es';
+const { t } = getI18n(lang);
+const year = new Date().getFullYear();
+---
+
 <footer data-testid="footer" class="p-6 text-center text-sm text-black dark:text-white">
 	<p>
-		Copyright © {new Date().getFullYear()}. All rights reserved. Made by<a
+		{t('footer.copyright')} {year}. {t('footer.rights')}
+		<a
 			href="https://github.com/badkitten-bug"
 			target="_blank"
 			rel="noopener"
 		>
 			<span class="text-green"> Steve Gomez </span>
 		</a>
-		and inspired by Veranika Kasparevych.
+		{t('footer.inspired')}
 	</p>
 </footer>

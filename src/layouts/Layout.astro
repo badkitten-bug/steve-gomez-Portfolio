@@ -8,6 +8,8 @@ export interface LayoutProps {
 }
 
 const { title = 'Steve Gomez | Web developer' } = Astro.props as LayoutProps;
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') || 'es';
 ---
 
 <!DOCTYPE html>
@@ -28,7 +30,7 @@ const { title = 'Steve Gomez | Web developer' } = Astro.props as LayoutProps;
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
 	>
-		<Navbar />
+		<Navbar lang={lang} />
 		<slot />
 		<Footer />
 		<style is:global>

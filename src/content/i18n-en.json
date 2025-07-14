@@ -1,0 +1,42 @@
+{
+  "navbar": {
+    "about": "About me",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi! I'm",
+    "role": "full-stack developer with",
+    "years": "+4 years",
+    "experience": "of experience.",
+    "specialized": "Specialized in",
+    "stack": ["NestJS", "Go", "Astro", "JavaScript"],
+    "cta": "Learn more!"
+  },
+  "about": {
+    "title": "About Me",
+    "years": "+4 years of experience developing robust web apps and APIs.",
+    "specialized": "Specialized in NestJS for RESTful APIs and GraphQL, Go for high-performance microservices, Astro for static websites, and JavaScript/TypeScript for full-stack development.",
+    "experience": "Experience in microservices architecture, relational and NoSQL databases, deployment with Docker and CI/CD, and agile development with Scrum.",
+    "cta": "Check out my projects below! ⬇️"
+  },
+  "stack": {
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "devops": "DevOps & Tools",
+    "databases": "Databases"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewAll": "View full file of private projects"
+  },
+  "footer": {
+    "copyright": "Copyright ©",
+    "rights": "All rights reserved. Made by",
+    "inspired": "and inspired by Veranika Kasparevych."
+  },
+  "contact": {
+    "cta": "Let's collaborate!",
+    "whatsapp": "Hi! I want to collaborate with you"
+  }
+} 

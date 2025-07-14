@@ -1,15 +1,18 @@
 ---
+import { getI18n } from '@content/i18n';
+const lang = Astro.url.pathname.split('/')[1] || 'es';
+const { t } = getI18n(lang);
 ---
 <section class="w-full max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
   <!-- Sobre Mí (caja grande, ocupa 2 columnas en desktop) -->
   <div class="col-span-1 lg:col-span-2 rounded-2xl bg-white/30 dark:bg-white/10 backdrop-blur-md p-8 shadow-lg border border-white/20 flex flex-col justify-center">
-    <h2 class="font-monospace text-2xl text-green lg:text-4xl mb-4">Sobre Mí</h2>
+    <h2 class="font-monospace text-2xl text-green lg:text-4xl mb-4">{t('about.title')}</h2>
     <span class="mb-6 ml-2 h-1 w-10 bg-green block"></span>
     <div class="text-base text-black dark:text-white lg:text-xl">
-      <p class="mb-4"><span class="text-amber font-semibold">+4 años</span> de experiencia desarrollando aplicaciones web y APIs robustas.</p>
-      <p class="mb-4">Especializado en <span class="text-green font-semibold">NestJS</span> para APIs RESTful y GraphQL, <span class="text-green font-semibold">Go</span> para microservicios de alto rendimiento, <span class="text-green font-semibold">Astro</span> para sitios web estáticos y <span class="text-green font-semibold">JavaScript/TypeScript</span> para desarrollo full-stack.</p>
-      <p class="mb-4">Experiencia en arquitectura de microservicios, bases de datos relacionales y NoSQL, despliegue con Docker y CI/CD, y desarrollo ágil con metodologías Scrum.</p>
-      <p>¡Echa un vistazo a mis proyectos aquí abajo! ⬇️</p>
+      <p class="mb-4">{t('about.years')}</p>
+      <p class="mb-4">{t('about.specialized')}</p>
+      <p class="mb-4">{t('about.experience')}</p>
+      <p>{t('about.cta')}</p>
     </div>
   </div>
 
@@ -17,7 +20,7 @@
   <div class="col-span-1 flex flex-col gap-8">
     <!-- Backend -->
     <div class="rounded-2xl bg-white/30 dark:bg-white/10 backdrop-blur-md p-6 shadow-lg border border-white/20 flex flex-col">
-      <h3 class="mb-4 text-lg font-semibold text-green">Backend</h3>
+      <h3 class="mb-4 text-lg font-semibold text-green">{t('stack.backend')}</h3>
       <div class="flex flex-wrap gap-4 items-center">
         <img src="/icons/nestjs.svg" width="32" height="32" alt="NestJS" title="NestJS" />
         <img src="/icons/golang.svg" width="32" height="32" alt="Go" title="Go" />
@@ -28,7 +31,7 @@
     </div>
     <!-- Frontend -->
     <div class="rounded-2xl bg-white/30 dark:bg-white/10 backdrop-blur-md p-6 shadow-lg border border-white/20 flex flex-col">
-      <h3 class="mb-4 text-lg font-semibold text-green">Frontend</h3>
+      <h3 class="mb-4 text-lg font-semibold text-green">{t('stack.frontend')}</h3>
       <div class="flex flex-wrap gap-4 items-center">
         <img src="/icons/astro.svg" width="32" height="32" alt="Astro" title="Astro" />
         <img src="/icons/react_light.svg" width="32" height="32" alt="React" title="React" />
@@ -39,7 +42,7 @@
     </div>
     <!-- DevOps & Herramientas -->
     <div class="rounded-2xl bg-white/30 dark:bg-white/10 backdrop-blur-md p-6 shadow-lg border border-white/20 flex flex-col">
-      <h3 class="mb-4 text-lg font-semibold text-green">DevOps & Herramientas</h3>
+      <h3 class="mb-4 text-lg font-semibold text-green">{t('stack.devops')}</h3>
       <div class="flex flex-wrap gap-4 items-center">
         <img src="/icons/docker.svg" width="32" height="32" alt="Docker" title="Docker" />
         <img src="/icons/git.svg" width="32" height="32" alt="Git" title="Git" />
@@ -47,7 +50,7 @@
     </div>
     <!-- Bases de Datos -->
     <div class="rounded-2xl bg-white/30 dark:bg-white/10 backdrop-blur-md p-6 shadow-lg border border-white/20 flex flex-col">
-      <h3 class="mb-4 text-lg font-semibold text-green">Bases de Datos</h3>
+      <h3 class="mb-4 text-lg font-semibold text-green">{t('stack.databases')}</h3>
       <div class="flex flex-wrap gap-4 items-center">
         <img src="/icons/postgresql.svg" width="32" height="32" alt="PostgreSQL" title="PostgreSQL" />
         <img src="/icons/mongodb.svg" width="32" height="32" alt="MongoDB" title="MongoDB" />

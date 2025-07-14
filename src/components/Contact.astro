@@ -1,6 +1,10 @@
 ---
 import Button from '@components/ui/Button.astro';
 import Social from '@components/ui/Social.astro';
+import { getI18n } from '@content/i18n';
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') || 'es';
+const { t } = getI18n(lang);
 ---
 
 <section
@@ -8,8 +12,8 @@ import Social from '@components/ui/Social.astro';
 	id="contact"
 	class="flex flex-col flex-wrap items-center justify-center gap-8 text-black dark:text-white lg:mb-0 lg:h-screen"
 >
-	<a href="https://wa.me/51958236730?text=Hola!%20quiero%20colaborar%20contigo">
-		<Button size={'lg'} style={'primary'} name="Contact">Let's collaborate 🫱🏻‍🫲🏼</Button>
+	<a href={`https://wa.me/51958236730?text=${encodeURIComponent(t('contact.whatsapp'))}`}>
+		<Button size={'lg'} style={'primary'} name="Contact">{t('contact.cta')}</Button>
 	</a>
 	<hr class="w-1/2" />
 	<div class="flex flex-col gap-8 lg:flex lg:flex-row lg:gap-20">

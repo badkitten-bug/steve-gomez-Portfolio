@@ -1,5 +1,8 @@
 ---
 import Button from '@components/ui/Button.astro';
+import { getI18n } from '@content/i18n';
+const lang = Astro.url.pathname.split('/')[1] || 'es';
+const { t } = getI18n(lang);
 ---
 
 <section
@@ -9,17 +12,24 @@ import Button from '@components/ui/Button.astro';
 	<div class="mb-10 flex flex-col items-center lg:mb-0 lg:w-1/2">
 		<div>
 			<h1 class="mb-6 font-monospace text-3xl text-black dark:text-white lg:text-5xl">
-				¡Hola! Soy <span class="text-green">Steve</span>, desarrollador full-stack con <span class="text-green">+4 años</span> de experiencia.
+				{t('hero.greeting')} <span class="text-green">Steve</span>, {t('hero.role')} <span class="text-green">{t('hero.years')}</span> {t('hero.experience')}
 			</h1>
 			<div class="mb-8">
 				<p class="text-lg text-gray-600 dark:text-gray-300 lg:text-xl">
-					Especializado en <span class="text-amber font-semibold">NestJS</span>, <span class="text-amber font-semibold">Go</span>, <span class="text-amber font-semibold">Astro</span> y <span class="text-amber font-semibold">JavaScript</span>
+					{t('hero.specialized')}
+					{
+						t('hero.stack').map((tech, i, arr) => (
+							<>
+								<span class="text-amber font-semibold">{tech}</span>{i < arr.length - 1 ? ', ' : ''}
+							</>
+						))
+					}
 				</p>
 			</div>
 		</div>
 		<div class="mb-10">
 			<a href="#about">
-				<Button style={'primary'} size={'lg'} class={'flex'} name="learn more">¡Conoce más!</Button>
+				<Button style={'primary'} size={'lg'} class={'flex'} name="learn more">{t('hero.cta')}</Button>
 			</a>
 		</div>
 	</div>
