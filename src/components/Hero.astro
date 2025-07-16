@@ -3,6 +3,7 @@ import Button from '@components/ui/Button.astro';
 import { getI18n } from '@content/i18n';
 const lang = Astro.url.pathname.split('/')[1] || 'es';
 const { t } = getI18n(lang);
+const prefix = `/${lang}`;
 ---
 
 <section
@@ -28,7 +29,7 @@ const { t } = getI18n(lang);
 			</div>
 		</div>
 		<div class="mb-10">
-			<a href="#about">
+			<a href={`${prefix}/#projects`}>
 				<Button style={'primary'} size={'lg'} class={'flex'} name="learn more">{t('hero.cta')}</Button>
 			</a>
 		</div>
