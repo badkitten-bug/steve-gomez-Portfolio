@@ -1,0 +1,23 @@
+---
+export interface Props {
+	src: string;
+	alt: string;
+	width?: number;
+	height?: number;
+	class?: string;
+	lazy?: boolean;
+}
+
+const { src, alt, width, height, class: className, lazy = true } = Astro.props;
+---
+
+<img
+	src={src}
+	alt={alt}
+	width={width}
+	height={height}
+	class={className}
+	loading={lazy ? "lazy" : "eager"}
+	decoding="async"
+	style="content-visibility: auto;"
+/>

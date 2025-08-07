@@ -1,0 +1,11 @@
+# Redirects for SEO
+/es/* /es/:splat 200
+/en/* /en/:splat 200
+
+# Redirect old URLs to new ones
+/portfolio /es/ 301
+/about /es/about 301
+/contact /es/contact 301
+
+# Handle 404s
+/* /es/ 404

@@ -4,28 +4,147 @@ import Navbar from '@components/Navbar.astro';
 import { SEO } from 'astro-seo';
 
 export interface LayoutProps {
-	title: string;
+	title?: string;
+	description?: string;
+	image?: string;
+	canonicalURL?: URL | string;
+	noindex?: boolean;
 }
 
-const { title = 'Steve Gomez | Web developer' } = Astro.props as LayoutProps;
+const { 
+	title = 'Steve Gomez | Desarrollador Web Full Stack',
+	description = 'Portfolio profesional de Steve Gomez, desarrollador web full stack especializado en React, Node.js, TypeScript y tecnologías modernas. Explora proyectos innovadores y soluciones web de alta calidad.',
+	image = '/hero.svg',
+	canonicalURL,
+	noindex = false
+} = Astro.props as LayoutProps;
+
 const url = new URL(Astro.request.url);
 const lang = url.searchParams.get('lang') || 'es';
+const currentURL = canonicalURL || url.href;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-testid="html">
+<html lang={lang} class="scroll-smooth" data-testid="html">
 	<head>
-		<SEO
-			title="Steve Gomez | Web developer"
-			description="Explora mi portafolio donde la magia de Astro y la elegancia de Svelte se unen para crear experiencias web únicas. Soy un apasionado desarrollador web con experiencia en desarrollo frontend, Astro, Svelte, y otras tecnologías modernas. Descubre cómo he llevado a cabo proyectos innovadores utilizando estas tecnologías para lograr resultados impactantes. ¡Bienvenido a un mundo donde el código cobra vida y la creatividad encuentra su mejor expresión!"
-		/>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
+		
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Steve Gomez" />
+		<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={currentURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={currentURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, url)} />
+		<meta property="og:site_name" content="Steve Gomez Portfolio" />
+		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={currentURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, url)} />
+		<meta property="twitter:creator" content="@stevegomez" />
+		
+		<!-- Additional SEO Meta Tags -->
+		<meta name="keywords" content="desarrollador web, full stack, React, Node.js, TypeScript, Astro, portfolio, proyectos web, desarrollo frontend, desarrollo backend" />
+		<meta name="theme-color" content="#10b981" />
+		<meta name="color-scheme" content="light dark" />
+		
+		<!-- Favicon and Icons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+		<link rel="manifest" href="/manifest.json" />
+		
+		<!-- Preconnect to external domains -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Steve Gomez",
+			"jobTitle": "Desarrollador Web Full Stack",
+			"description": description,
+			"url": "https://kittensg.netlify.app",
+			"image": new URL(image, url).href,
+			"sameAs": [
+				"https://github.com/stevegomez",
+				"https://linkedin.com/in/stevegomez",
+				"https://twitter.com/stevegomez"
+			],
+			"knowsAbout": [
+				"Desarrollo Web",
+				"React",
+				"Node.js",
+				"TypeScript",
+				"Astro",
+				"Full Stack Development"
+			],
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Freelance"
+			}
+		})} />
+		
+		<!-- Performance and Security -->
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+		
+		<!-- SEO Component -->
+		<SEO
+			title={title}
+			description={description}
+			openGraph={{
+				basic: {
+					title: title,
+					type: "website",
+					image: new URL(image, url).href,
+				},
+				optional: {
+					description: description,
+					siteName: "Steve Gomez Portfolio",
+				},
+			}}
+			twitter={{
+				creator: "@stevegomez",
+				card: "summary_large_image",
+			}}
+			extend={{
+				link: [
+					{
+						rel: "canonical",
+						href: currentURL.toString(),
+					},
+				],
+				meta: [
+					{
+						name: "theme-color",
+						content: "#10b981",
+					},
+					{
+						name: "color-scheme",
+						content: "light dark",
+					},
+				],
+			}}
+		/>
 	</head>
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-black xs:text-[16px] md:text-[18px]"
