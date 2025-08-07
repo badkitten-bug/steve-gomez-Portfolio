@@ -68,15 +68,15 @@ export default function ProjectsGalleryReact({ projects }) {
         {/* Izquierda: Lista de proyectos */}
         <div className="md:w-1/2 w-full flex flex-col gap-4 order-2 md:order-1">
           {/* Contenedor de proyectos con scroll */}
-          <div className="relative min-h-[400px]">
+          <div className="relative min-h-[400px] px-8">
             {/* Botón anterior */}
             {totalPages > 1 && (
               <button
                 onClick={prevPage}
-                className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-110"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-110 text-green"
                 aria-label="Proyectos anteriores"
               >
-                <svg className="w-4 h-4 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -116,10 +116,10 @@ export default function ProjectsGalleryReact({ projects }) {
             {totalPages > 1 && (
               <button
                 onClick={nextPage}
-                className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-110"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-110 text-green"
                 aria-label="Siguientes proyectos"
               >
-                <svg className="w-4 h-4 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -129,11 +129,12 @@ export default function ProjectsGalleryReact({ projects }) {
           {/* Indicadores de página */}
           {totalPages > 1 && (
             <div className="flex justify-center gap-3 mt-6">
+              <span className="text-sm text-gray-500 dark:text-gray-400 mr-2">Página {currentPage + 1} de {totalPages}</span>
               {Array.from({ length: totalPages }, (_, i) => (
                 <button
                   key={i}
                   onClick={() => goToPage(i)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
                     currentPage === i
                       ? "bg-green scale-125 shadow-lg"
                       : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 hover:scale-110"

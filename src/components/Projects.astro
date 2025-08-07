@@ -16,4 +16,30 @@ const projects = await getCollection('projects', ({ data }) => {
   <div class="w-full">
     <ProjectsGalleryReact client:only="react" projects={projects} />
   </div>
+  
+  <!-- Botón para ir al blog personal -->
+  <div class="mt-12 text-center">
+    <div class="mb-4">
+      <p class="text-gray-600 dark:text-gray-300 text-lg">
+        ¿Quieres ver más proyectos y artículos técnicos?
+      </p>
+    </div>
+    <a
+      href="https://kentux2-0.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green to-green/80 text-white rounded-lg hover:from-green/90 hover:to-green/70 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold text-lg"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+      Ver mi Blog Personal
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17l9.2-9.2M17 17V7H7" />
+      </svg>
+    </a>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">
+      Proyectos, artículos técnicos y más contenido en mi blog personal
+    </p>
+  </div>
 </section>
